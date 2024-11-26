@@ -1,0 +1,49 @@
+<!-- Contenido principal -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botón del menú lateral izquierdo -->
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>LA TERRAZA</ion-title>
+    <ion-buttons slot="end">
+      <!-- Botón del menú lateral derecho con icono de avatar -->
+      <a><img width="30" height="25" src="https://img.icons8.com/material-two-tone/48/shopping-cart--v1.png"
+        alt="shopping-cart--v1" style="margin-top: -4px;" (click)="carrito()"/></a>
+      <ion-button (click)="perfil()">
+
+        <img width="30" height="25" src="https://img.icons8.com/ios-glyphs/30/user--v1.png" alt="user--v1"
+          style="margin-top: -5px;" />
+
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content"> <!-- Vinculado al contentId del menú -->
+  <ion-grid>
+    <!-- Barra de búsqueda -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-searchbar [(ngModel)]="searchQuery" placeholder="Busca algún producto"
+          class="barrabusqueda"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+
+    <!-- Filtro de productos -->
+    <ion-row class="product-filters">
+      <ion-col size="auto" *ngFor="let category of categories" class="filter-col">
+        <ion-chip class="categorias" (click)="goToCategory(category)">
+          <ion-label>{{ category }}</ion-label>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-inicio></app-inicio>
+
+
+
+
+
+
+</ion-content>

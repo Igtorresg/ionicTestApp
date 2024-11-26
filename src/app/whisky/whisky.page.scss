@@ -1,0 +1,35 @@
+ion-content {
+    
+  --background: white; /* Color de fondo personalizado */
+}
+
+$text-color-dark: #000;
+
+$background-light: #f8f8f8;
+$avatar-size: 40px;
+$border-radius: 8px;
+$transition-duration: 0.3s;
+$hover-scale: 1.05;
+$active-scale: 0.95;
+
+// Uso de las variables en los estilos
+ion-header {
+--background: $secondary-color;
+--color: $text-color-light;
+}
+
+ion-content {
+background-color: $background-light;
+}
+
+ion-title {
+  color:rgb(2, 60, 167);
+font-weight: bold;
+text-align: center;
+}
+.textcenter{    
+  text-align: center;
+  font-size: 25px;
+  
+}
+

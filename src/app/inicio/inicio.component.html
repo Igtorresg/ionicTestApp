@@ -1,0 +1,54 @@
+<!-- Componente que se reutiliza en home -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Home - {{ sucursal }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-card *ngIf="promocionDelDia">
+    <ion-card-header>
+      <ion-card-title>Promoción del Día</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="promocionDelDia.imageUrl" alt="Promoción">
+      <p>{{ promocionDelDia.description }}</p>
+      <p>{{ promocionDelDia.discount }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="ofertaDelDia">
+    <ion-card-header>
+      <ion-card-title>Oferta del Día</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="ofertaDelDia.imageUrl" alt="Oferta">
+      <p>{{ ofertaDelDia.description }}</p>
+      <p>{{ ofertaDelDia.countdown }}</p>
+    </ion-card-content>
+  </ion-card>
+  <h5 style="text-align: center;">Opiniones</h5>
+    <ion-row>
+      <ion-col size="6" *ngFor="let product of Productswithreview">
+        <ion-card>
+          <ion-card-content>
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.reviews.length }} opiniones</p> <!-- Cantidad de reviews -->
+            <p>Calificación: {{ product.rating }} / 5</p>
+            <!-- Muestra la primera review -->
+            <p><strong>{{ product.reviews[0].user }}:</strong> {{ product.reviews[0].comment }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Suscríbete a nuestro boletín</ion-label><br>
+          <ion-input type="email" [(ngModel)]="email" placeholder="Escribe tu correo aquí"></ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="subscribeToNewsletter()">Suscribirse</ion-button>
+      </ion-col>
+    </ion-row>
+  

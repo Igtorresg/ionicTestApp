@@ -1,0 +1,99 @@
+:root {
+  --background:#2C003E; /* Cambia este valor al color deseado */
+  padding-bottom: -20px;
+}
+
+ion-header {
+  --background: #2C003E;
+  --color: #fff;
+}
+
+
+ion-content {
+  --background: #21005D;
+  
+}
+
+ion-button {
+  margin-top: 15px;
+}
+
+h1, h2 {
+  color: white;
+  font-weight: bold;
+}
+.ion-text-center{
+  color: #fff;
+}
+
+.inputs{
+  padding-bottom: 10px;      
+  --border-width: 0.1px; /* Ajusta el grosor del borde */
+  --border-radius: 8px; /* Redondeo de las esquinas */
+  border: var(--border-width) solid var(--border-color); /* Aplica el borde */
+  border-radius: var(--border-radius); /* Aplica el redondeo */
+}
+.offer-image {
+  display: block;
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+.btnirregistro{
+  color: antiquewhite;
+  margin-top: -15px;
+}
+.h3o{
+  color: #fff;
+  text-align: center;
+  margin-bottom: -10px;
+}
+.btnlogingoogle{
+  
+  background: linear-gradient(#2C29AD,#E0401D);
+    
+  color: #fff;
+  padding-inline: 10px;
+  --border-radius: 15px; /* Redondeo de las esquinas */
+  border-radius: var(--border-radius); /* Aplica el redondeo */
+}
+.promomes {
+  background-color: aliceblue;
+  width: 70%;
+  border-radius: 10px; /* Redondeo de las esquinas */
+  padding: 10px; /* Añadir relleno para que el contenido no esté pegado a los bordes */
+  display: flex; /* Usa flexbox para alinear la imagen */
+  align-items: center; /* Alinea la imagen verticalmente al centro del div */
+  margin: 0 auto; /* Centra el div horizontalmente en su contenedor */
+  margin-bottom: 15px;
+}
+
+.promomes img {
+  width: 100px;
+  height: 100px;
+}
+
+.text-contenido {
+  display: flex;
+  flex-direction: column; /* Coloca el título y la descripción en columna */
+}
+
+.text-contenido h2 {
+  padding-left: 10px;
+  color: #21005D;
+  margin: 0;
+  font-size: 1.2rem; /* Tamaño del título */
+}
+
+.text-contenido p {
+  padding-left: 10px;
+  margin: 5px 0 0; /* Espacio entre el título y la descripción */
+  font-size: 1rem; /* Tamaño de la descripción */
+}
+
+.olvidasteclave{
+  color: aliceblue;
+  font-size: small;
+  margin-top: -3px;
+  text-align: end;
+}

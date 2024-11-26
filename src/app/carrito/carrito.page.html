@@ -1,0 +1,51 @@
+<!-- Contenido principal -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botón del menú lateral izquierdo -->
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>LA TERRAZA</ion-title>
+    <ion-buttons slot="end">
+      <!-- Botón del menú lateral derecho con icono de avatar -->
+      <a><img width="30" height="25" src="https://img.icons8.com/material-two-tone/48/shopping-cart--v1.png"
+        alt="shopping-cart--v1" style="margin-top: -4px;" (click)="carrito()"/></a>
+      <ion-button (click)="perfil()">
+
+        <img width="30" height="25" src="https://img.icons8.com/ios-glyphs/30/user--v1.png" alt="user--v1"
+          style="margin-top: -5px;" />
+
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- Mostrar los productos del carrito -->
+    <ion-item *ngFor="let product of cart">
+      <ion-thumbnail slot="start">
+        <img [src]="product.imageUrl" alt="Imagen del producto">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.name }}</h2>
+        
+        <p><strong>Precio:</strong> ${{ product.price }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Mostrar el total del carrito -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Total del Carrito</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Total:</strong> ${{ calculateTotal() }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón para realizar la reserva -->
+   <ion-button  fill="outline" (click)="clearCart()" style="display: flex;"> Vaciar Carrito</ion-button>
+  <ion-button expand="full" (click)="reserve()">Reservar</ion-button>
+</ion-content>

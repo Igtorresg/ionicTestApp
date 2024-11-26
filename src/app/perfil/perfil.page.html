@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botón del menú lateral izquierdo -->
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>LA TERRAZA</ion-title>
+    <ion-buttons slot="end">
+      <!-- Botón del menú lateral derecho con icono de avatar -->
+      <a><img width="30" height="25" src="https://img.icons8.com/material-two-tone/48/shopping-cart--v1.png"
+          alt="shopping-cart--v1" style="margin-top: -4px;" (click)="carrito()" /></a>
+      <ion-button (click)="perfil()">
+
+        <img width="30" height="25" src="https://img.icons8.com/ios-glyphs/30/user--v1.png" alt="user--v1"
+          style="margin-top: -5px;" />
+
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Información del perfil -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información del Perfil</ion-card-title>
+    </ion-card-header>
+
+    <!-- Tarjeta centrada con imagen, correo e input para nombre -->
+    <div class="card-container">
+      <ion-card>
+        <ion-card-content class="card-content">
+          <ion-avatar class="avatar-container">
+            <img [src]="userPhotoURL" alt="Avatar">
+            <!-- Botón transparente sobre la imagen -->
+            <ion-button fill="clear" class="avatar-overlay-button" (click)="onProfileImagePressed()"></ion-button>
+          </ion-avatar>
+          <ion-label>
+            <h2 style="color: black;">Correo: {{ userEmail }}</h2>
+          </ion-label>
+          <ion-label>
+            <h2 style="color: black;">Nombre de usuario actual: {{ userName }} </h2>
+            <ion-input [(ngModel)]="nombreNuevo "placeholder="Introduce tu nuevo nombre de usuario"></ion-input>
+            <ion-button (click)="onUpdateButtonPressed()">Cambiar nombre de usuario</ion-button>
+          </ion-label>
+          
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-card>
+
+
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>
+        Otras opciones
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-button (click)="logout()">Cerrar Sesion</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

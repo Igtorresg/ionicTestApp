@@ -1,0 +1,128 @@
+// Definición de variables
+$primary-color: #007bff;
+$secondary-color: #2c003e;
+$text-color-light: #fff;
+$text-color-dark: #000;
+
+$background-light: #f8f8f8;
+$avatar-size: 40px;
+$border-radius: 8px;
+$transition-duration: 0.3s;
+$hover-scale: 1.05;
+$active-scale: 0.95;
+
+// Uso de las variables en los estilos
+ion-header {
+  --background: $secondary-color;
+  --color: $text-color-light;
+}
+
+ion-content {
+  background-color: $background-light;
+}
+
+ion-title {
+  
+  color: rgb(2, 60, 167);
+  font-weight: bold;
+  text-align: center;
+}
+
+//Categorias
+.product-filters {
+  justify-content: center; /* Centra los elementos horizontalmente */
+  flex-wrap: wrap; /* Permite que los filtros se envuelvan en una nueva línea si no caben en una fila */
+}
+//Categorias
+.filter-col {
+  display: flex;
+  justify-content: center; /* Centra el contenido dentro de la columna */
+  margin: 2px; /* Espacio alrededor de cada chip para mejor presentación */
+}
+.categorias {
+  color: white;
+  background-color: #007bff;
+}
+//Barra
+.barrabusqueda {
+  --border-radius: 10px; /* Redondea las esquinas del ion-searchbar */
+}
+//Card promocion
+.cardpromociondeldia {
+  --border-width: 0.1px; /* Ajusta el grosor del borde */
+  --border-color: #000; /* Color del borde */
+  --border-radius: 7px; /* Redondeo de las esquinas */
+  border: var(--border-width) solid var(--border-color); /* Aplica el borde */
+  border-radius: var(--border-radius); /* Aplica el redondeo */
+}
+
+//LOGIN
+
+ion-card h2,
+ion-card h3 {
+  font-weight: bold;
+}
+
+ion-tab-bar {
+  --background: $text-color-light;
+  --color: $text-color-dark;
+}
+
+ion-button {
+  --background: $text-color-light;
+  --border-radius: $border-radius;
+  --border-color: $primary-color;
+  --border-width: 2px;
+  color: $primary-color;
+  transition: background-color $transition-duration ease,
+    color $transition-duration ease, transform $transition-duration ease;
+
+  &:hover {
+    --background: $primary-color;
+    color: $text-color-light;
+    transform: scale($hover-scale);
+  }
+
+  &:active {
+    transform: scale($active-scale);
+  }
+}
+.offer-card {
+  position: relative;
+  --border-width: 0.1px; /* Ajusta el grosor del borde */
+  --border-color: #000; /* Color del borde */
+  --border-radius: 7px; /* Redondeo de las esquinas */
+  border: var(--border-width) solid var(--border-color); /* Aplica el borde */
+  border-radius: var(--border-radius); /* Aplica el redondeo */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.offer-image {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con transparencia */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.overlay h3,
+.overlay p {
+  margin: 0;
+}

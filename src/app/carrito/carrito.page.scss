@@ -1,0 +1,23 @@
+// Uso de las variables en los estilos
+
+// Definición de variables
+$background-light: #f8f8f8;
+$primary-color: #007bff;
+$secondary-color: #2c003e;
+$text-color-light: #fff;
+$text-color-dark: #000;
+ion-header {
+    --background: $secondary-color;
+    --color: $text-color-light;
+  }
+  
+  ion-content {
+    background-color: $background-light;
+  }
+  
+  ion-title {
+    padding-top: 10px;
+    color: rgb(2, 60, 167);
+    font-weight: bold;
+    text-align: center;
+  }

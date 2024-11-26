@@ -1,0 +1,106 @@
+<div class="admin-container">
+  <h1>Gestión de Productos</h1>
+
+  <!-- Botón para agregar nuevo producto -->
+  <button (click)="clearForm()" class="add-button">Agregar Nuevo Producto</button>
+
+  <!-- Mensajes de estado -->
+  <div *ngIf="message" class="message">{{ message }}</div>
+
+  <!-- Formulario para agregar/editar producto -->
+  <form (ngSubmit)="isEditing ? updateProduct() : addProduct()" class="product-form">
+    <!-- Nombre del producto -->
+    <div class="form-group">
+      <label for="name">Nombre del Producto</label>
+      <input
+        id="name"
+        type="text"
+        placeholder="Nombre del producto"
+        [(ngModel)]="currentProduct.name"
+        name="name"
+        required
+      />
+    </div>
+
+    <!-- Precio del producto -->
+    <div class="form-group">
+      <label for="price">Precio</label>
+      <input
+        id="price"
+        type="number"
+        placeholder="Precio del producto"
+        [(ngModel)]="currentProduct.price"
+        name="price"
+        min="1"
+        required
+      />
+    </div>
+
+    <!-- Descripción del producto -->
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea
+        id="description"
+        placeholder="Descripción del producto"
+        [(ngModel)]="currentProduct.description"
+        name="description"
+        required
+      ></textarea>
+    </div>
+
+    <!-- Categoría -->
+    <div class="form-group">
+      <label for="category">Categoría</label>
+      <select id="category" [(ngModel)]="currentProduct.category" name="category" required>
+        <option value="" disabled>Seleccione una categoría</option>
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Imagen del producto -->
+    <div class="form-group">
+      <label for="image">Imagen del Producto</label>
+      <input
+        id="image"
+        type="file"
+        (change)="onFileSelected($event)"
+        accept="image/*"
+      />
+      <div *ngIf="currentProduct.imageUrl" class="preview-image">
+        <p>Vista previa:</p>
+        <img [src]="currentProduct.imageUrl" alt="Vista previa" />
+      </div>
+    </div>
+
+    <!-- Acciones del formulario -->
+    <div class="form-actions">
+      <button type="submit" class="submit-button">
+        {{ isEditing ? 'Actualizar Producto' : 'Agregar Producto' }}
+      </button>
+      <button type="button" class="cancel-button" (click)="clearForm()">Cancelar</button>
+    </div>
+  </form>
+
+  <!-- Lista de productos -->
+  <div *ngFor="let product of products; let i = index" class="product-item">
+    <div class="product-details">
+      <h3>{{ product.name }}</h3>
+      <p><strong>Precio:</strong> ${{ product.price }}</p>
+      <p><strong>Descripción:</strong> {{ product.description }}</p>
+      <p><strong>Categoría:</strong> {{ product.category }}</p>
+    </div>
+
+    <!-- Imagen del producto -->
+    <div *ngIf="product.imageUrl" class="product-image">
+      <img [src]="product.imageUrl" alt="{{ product.name }}" />
+    </div>
+
+    <!-- Acciones para el producto -->
+    <div class="product-actions">
+      <button (click)="editProduct(product)" class="edit-button">Editar</button>
+      <button (click)="deleteProduct(product)" class="delete-button">Eliminar</button>
+    </div>
+  </div>
+</div>

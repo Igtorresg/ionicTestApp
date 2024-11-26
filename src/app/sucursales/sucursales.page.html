@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Selecciona tu Sucursal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item button (click)="seleccionarSucursal('Viña')" class="sucursal-item">
+      <ion-icon name="storefront-outline" slot="start" color="tertiary"></ion-icon>
+      Sucursal Viña
+    </ion-item>
+    <ion-item button (click)="seleccionarSucursal('Valparaiso')" class="sucursal-item">
+      <ion-icon name="storefront-outline" slot="start" color="secondary"></ion-icon>
+      Sucursal Valparaiso
+    </ion-item>
+    <ion-item button (click)="seleccionarSucursal('Quilpue')" class="sucursal-item">
+      <ion-icon name="storefront-outline" slot="start" color="warning"></ion-icon>
+      Sucursal Quilpue
+    </ion-item>
+  </ion-list>
+</ion-content>

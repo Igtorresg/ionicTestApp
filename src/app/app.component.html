@@ -1,0 +1,21 @@
+<ion-app>
+  <ion-menu side="start" menuId="main-menu" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú Principal</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/home" (click)="cerrarmenu()">Inicio</ion-item>
+        <ion-item routerLink="/sucursales" (click)="cerrarmenu()">Ver Sucurales</ion-item>
+        
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

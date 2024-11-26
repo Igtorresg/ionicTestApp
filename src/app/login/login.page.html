@@ -1,0 +1,42 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <h1>Que bueno verte de nuevo</h1>
+        <h4>Inicia Sesión</h4>
+      </ion-col>
+    </ion-row>
+    
+    <div class="promomes">
+      <img src="assets/img/corona_650.jpg" alt="Promoción Royal Guard">
+      <div class="text-contenido">
+        <h2>Promoción del mes!</h2>
+        <p>Cervezas corona con 10% de descuento</p>
+      </div>
+    </div>
+
+    <ion-row>
+      <ion-col>
+        <ion-item class="inputs">
+          <img src="assets/img/usuario.png" alt="Icono usuario" width="26px" style="padding-right: 10px;">
+          <ion-input placeholder="Correo" type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item class="inputs">
+          <img src="assets/img/contrasena.png" alt="Icono clave" width="29px" style="padding-right: 10px;">
+          <ion-input placeholder="Contraseña" type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <h5 class="olvidasteclave" (click)="recuperarclave()">¿Olvidaste tu contraseña?</h5>
+        <ion-button expand="block" (click)="onLoginButtonPressed()">Iniciar Sesión</ion-button>
+        
+        <h3 class="h3o">O</h3>
+        <ion-button expand="block" (click)="loginGoogle()">Login Con Google</ion-button>
+        
+
+        <div class="ion-text-center">
+          <p style="color: white;">¿No tienes una cuenta?</p>
+          <ion-button fill="clear" (click)="onRegisterButtonPressed()" class="btnirregistro">REGÍSTRATE AQUÍ</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
